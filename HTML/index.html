@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escuela para Jóvenes Talentos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -66,15 +72,14 @@
     <script>
         const toggleDarkMode = () => {
             const body = document.body;
-            body.classList.toggle("has-background-dark");
-            body.classList.toggle("has-text-white");
+            body.classList.toggle('dark-mode');
         }
     </script>
 
     <!-- Botón para alternar modo oscuro/claro -->
-    <div class="container has-text-centered mt-5">
-        <button class="button is-light" onclick="toggleDarkMode()">
-            Alternar Modo Oscuro/Claro
+    <div class="container has-text-right">
+        <button id="toggle-theme" class="button is-light" onclick="toggleDarkMode()">
+            Modo Oscuro
         </button>
     </div>
 </body>
