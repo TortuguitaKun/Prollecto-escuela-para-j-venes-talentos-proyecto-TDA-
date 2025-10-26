@@ -45,6 +45,20 @@ CREATE TABLE insignias (
     imagen_url VARCHAR(255)
 );
 
+INSERT INTO usuarios (nombre_papa, nombre_niño, correo_papa, telefono, password, rol)
+VALUES
+('Carlos Méndez', 'Luis Méndez', 'carlos.mendez@gmail.com', '5551234567', '12345', 'padre'),
+('María López', 'Ana López', 'maria.lopez@gmail.com', '5559876543', 'abc123', 'padre'),
+('José Hernández', 'Pedro Hernández', 'jose.hernandez@gmail.com', '5554567890', 'pass123', 'padre'),
+('Lucía Torres', 'Emilia Torres', 'lucia.torres@gmail.com', '5556781234', 'torres2024', 'padre'),
+('Admin General', 'N/A', 'admin@tda.com', '5550001111', 'admin123', 'admin'),
+('Laura Ruiz', 'Daniel Ruiz', 'laura.ruiz@gmail.com', '5553216549', 'laura2024', 'padre'),
+('Juan Castillo', 'Sofía Castillo', 'juan.castillo@gmail.com', '5557894561', 'castillo123', 'padre'),
+('Patricia Gómez', 'Leo Gómez', 'patricia.gomez@gmail.com', '5557418529', 'gomezleo', 'padre'),
+('Rosa Jiménez', 'Mateo Jiménez', 'rosa.jimenez@gmail.com', '5559638527', 'mateoRosa', 'padre'),
+('Profesor TDA', 'N/A', 'instructor@tda.com', '5552223333', 'teachme', 'instructor');
+
+
 CREATE TABLE insignias_obtenidas (
     id_usuario INT NOT NULL,
     id_insignia INT NOT NULL,
