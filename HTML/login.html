@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión - Escuela para Jóvenes Talentos</title>
-    <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body>
@@ -43,4 +42,27 @@
                                 <button class="button is-primary is-fullwidth">Entrar</button>
                             </div>
                             <div class="has-text-centered">
-                                <a href="#">
+                                <a href="#">¿Olvidaste tu contraseña?</a>
+                            </div>
+                        </form>
+                        <div class="has-text-centered">
+                            <p>¿No tienes una cuenta? <a href="#">Regístrate aquí</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bulma@0.9.4/js/bulma.min.js"></script>
+    <script>
+        // Script para alternar entre modo oscuro y claro
+        const toggleDarkMode = document.getElementById('toggleDarkMode');
+        const htmlElement = document.documentElement;
+
+        toggleDarkMode.addEventListener('click', () => {
+            htmlElement.classList.toggle('has-background-dark');
+            htmlElement.classList.toggle('has-text-white');
+        });
+    </script>
+</body>
+</html>
