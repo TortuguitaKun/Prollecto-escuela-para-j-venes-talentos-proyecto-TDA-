@@ -17,7 +17,7 @@
                             <div class="field">
                                 <label for="username" class="label">Usuario</label>
                                 <div class="control has-icons-left">
-                                    <input type="text" placeholder="Tu usuario" class="input" required>
+                                    <input type="text" id="username" placeholder="Tu usuario" class="input" required>
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                     </span>
@@ -26,7 +26,7 @@
                             <div class="field">
                                 <label for="password" class="label">Contraseña</label>
                                 <div class="control has-icons-left">
-                                    <input type="password" placeholder="Tu contraseña" class="input" required>
+                                    <input type="password" id="password" placeholder="Tu contraseña" class="input" required>
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-lock"></i>
                                     </span>
@@ -39,7 +39,8 @@
                                 </label>
                             </div>
                             <div class="field">
-                                <button class="button is-primary is-fullwidth">Entrar</button>
+                                <button class="button is-primary is-fullwidth"
+                                type="submit" id="submit" >Entrar</button>
                             </div>
                             <div class="has-text-centered">
                                 <a href="#">¿Olvidaste tu contraseña?</a>
@@ -54,6 +55,7 @@
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bulma@0.9.4/js/bulma.min.js"></script>
+    <script src="../Js/ControlLogin.js"> </script>
     <script>
         // Script para alternar entre modo oscuro y claro
         const toggleDarkMode = document.getElementById('toggleDarkMode');
