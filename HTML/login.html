@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Escuela para Jóvenes Talentos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <section class="hero is-fullheight is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                        <form action="#" method="POST" class="box">
+                            <h3 class="title has-text-centered">Iniciar Sesión</h3>
+                            <div class="field">
+                                <label for="username" class="label">Usuario</label>
+                                <div class="control has-icons-left">
+                                    <input type="text" id="username" placeholder="Tu usuario" class="input" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="password" class="label">Contraseña</label>
+                                <div class="control has-icons-left">
+                                    <input type="password" id="password" placeholder="Tu contraseña" class="input" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Recordarme
+                                </label>
+                            </div>
+                            <div class="field">
+                                <button class="button is-primary is-fullwidth"
+                                type="submit" id="submit" >Entrar</button>
+                            </div>
+                            <div class="has-text-centered">
+                                <a href="#">¿Olvidaste tu contraseña?</a>
+                            </div>
+                        </form>
+                        <div class="has-text-centered">
+                            <p>¿No tienes una cuenta? <a href="#">Regístrate aquí</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bulma@0.9.4/js/bulma.min.js"></script>
+    <script src="../Js/ControlLogin.js"> </script>
+    <script>
+        // Script para alternar entre modo oscuro y claro
+        const toggleDarkMode = document.getElementById('toggleDarkMode');
+        const htmlElement = document.documentElement;
+
+        toggleDarkMode.addEventListener('click', () => {
+            htmlElement.classList.toggle('has-background-dark');
+            htmlElement.classList.toggle('has-text-white');
+        });
+    </script>
+</body>
+</html>

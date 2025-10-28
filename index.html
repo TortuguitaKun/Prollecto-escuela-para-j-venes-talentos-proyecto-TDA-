@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuela para Jóvenes Talentos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                <img src="../IMG/logo.png" alt="Logo de la Escuela" width="112" height="28">
+            </a>
+        </div>
+
+        <div class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="#inicio">Inicio</a>
+                <a class="navbar-item" href="#nosotros">Nosotros</a>
+                <a class="navbar-item" href="#programas">Programas</a>
+                <a class="navbar-item" href="#admisiones">Admisiones</a>
+                <a class="navbar-item" href="#contacto">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero is-large is-info">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-1">Desarrollando el potencial de la próxima generación</h1>
+                <p class="subtitle">Un espacio donde la curiosidad se convierte en conocimiento y el talento en éxito.</p>
+                <a href="#programas" class="button is-primary is-large">Explora nuestros programas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros Section -->
+    <section class="section" id="nosotros">
+        <div class="container">
+            <h2 class="title is-2">Sobre Nosotros</h2>
+            <div class="content">
+                <p class="is-size-5">En la Escuela para Jóvenes Talentos, nos dedicamos a identificar y nutrir las habilidades excepcionales de estudiantes con alto potencial.</p>
+            </div>
+
+            <div class="columns mt-6">
+                <div class="column">
+                    <div class="box">
+                        <h3 class="title is-4">Misión</h3>
+                        <p>Fomentar un ambiente educativo estimulante que potencie las capacidades intelectuales, creativas y sociales de cada estudiante.</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <h3 class="title is-4">Visión</h3>
+                        <p>Ser la institución líder en la formación de jóvenes talentos, reconocida por su excelencia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script para el modo oscuro/claro -->
+    <script>
+        const toggleDarkMode = () => {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+        }
+    </script>
+
+    <!-- Botón para alternar modo oscuro/claro -->
+    <div class="container has-text-right">
+        <button id="toggle-theme" class="button is-light" onclick="toggleDarkMode()">
+            Modo Oscuro
+        </button>
+    </div>
+</body>
+</html>

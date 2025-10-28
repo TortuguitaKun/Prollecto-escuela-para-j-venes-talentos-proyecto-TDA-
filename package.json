@@ -1,0 +1,23 @@
+{
+  "name": "prollecto-escuela-para-j-venes-talentos-proyecto-tda-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TortuguitaKun/Prollecto-escuela-para-j-venes-talentos-proyecto-TDA-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TortuguitaKun/Prollecto-escuela-para-j-venes-talentos-proyecto-TDA-/issues"
+  },
+  "homepage": "https://github.com/TortuguitaKun/Prollecto-escuela-para-j-venes-talentos-proyecto-TDA-#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
