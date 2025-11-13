@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piano Realista</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: radial-gradient(circle at center, #444 0%, #111 100%);
+    }
+
+    .piano-container {
+      background: #1b1b1b;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: inset 0 5px 15px rgba(255, 255, 255, 0.1),
+                  0 10px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .piano {
+      position: relative;
+      display: flex;
+      height: 260px;
+      background: #111;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      padding: 0 10px;
+    }
+
+    /* Teclas blancas */
+    .white-key {
+      width: 70px;
+      height: 100%;
+      background: linear-gradient(to bottom, #fff 0%, #eaeaea 90%, #ddd 100%);
+      border: 1px solid #bbb;
+      border-radius: 0 0 5px 5px;
+      margin: 0 1px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 10px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+      transition: all 0.1s ease;
+    }
+
+    .white-key:active {
+      background: linear-gradient(to bottom, #ddd 0%, #ccc 100%);
+      transform: translateY(2px);
+    }
+
+    /* Teclas negras */
+    .black-key {
+      position: absolute;
+      width: 45px;
+      height: 160px;
+      background: linear-gradient(to bottom, #222 0%, #000 90%);
+      border-radius: 0 0 4px 4px;
+      border: 1px solid #111;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 10px;
+      color: white;
+      box-shadow: inset 0 -2px 4px rgba(255, 255, 255, 0.1),
+                  0 3px 5px rgba(0, 0, 0, 0.7);
+      transition: all 0.1s ease;
+    }
+
+    .black-key:active {
+      background: linear-gradient(to bottom, #000 0%, #222 100%);
+      transform: translateY(2px);
+    }
+
+    .note-name {
+      font-size: 13px;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .black-key .note-name {
+      color: #fff;
+    }
+
+    .solfege {
+      font-size: 12px;
+      color: #555;
+    }
+
+    .black-key .solfege {
+      color: #ccc;
+    }
+
+    .instructions {
+      text-align: center;
+      color: #eee;
+      margin-top: 25px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="piano-container">
+    <div class="piano" id="piano"></div>
+    <div class="instructions">
+      <p>Haz clic o usa el teclado (A, W, S, E, D, F, T, G, Y, H, U, J, K)</p>
+    </div>
+  </div>
+
+  <script>
+    // Notas con teclas del teclado
+    const notes = [
+      { key: 'A', note: 'C', solfege: 'Do', type: 'white' },
+      { key: 'W', note: 'C#', solfege: 'Do#', type: 'black', offset: 50 },
+      { key: 'S', note: 'D', solfege: 'Re', type: 'white' },
+      { key: 'E', note: 'D#', solfege: 'Re#', type: 'black', offset: 120 },
+      { key: 'D', note: 'E', solfege: 'Mi', type: 'white' },
+      { key: 'F', note: 'F', solfege: 'Fa', type: 'white' },
+      { key: 'T', note: 'F#', solfege: 'Fa#', type: 'black', offset: 240 },
+      { key: 'G', note: 'G', solfege: 'Sol', type: 'white' },
+      { key: 'Y', note: 'G#', solfege: 'Sol#', type: 'black', offset: 310 },
+      { key: 'H', note: 'A', solfege: 'La', type: 'white' },
+      { key: 'U', note: 'A#', solfege: 'La#', type: 'black', offset: 380 },
+      { key: 'J', note: 'B', solfege: 'Si', type: 'white' },
+      { key: 'K', note: 'C2', solfege: 'Do', type: 'white' }
+    ];
+
+    const piano = document.getElementById('piano');
+
+    // Crear teclas blancas
+    notes.filter(n => n.type === 'white').forEach(note => {
+      const key = document.createElement('div');
+      key.className = 'white-key';
+      key.innerHTML = `
+        <div class="note-name">${note.note}</div>
+        <div class="solfege">${note.solfege}</div>
+      `;
+      key.addEventListener('click', () => highlightKey(note));
+      piano.appendChild(key);
+    });
+
+    // Crear teclas negras
+    notes.filter(n => n.type === 'black').forEach(note => {
+      const key = document.createElement('div');
+      key.className = 'black-key';
+      key.style.left = note.offset + 'px';
+      key.innerHTML = `
+        <div class="note-name">${note.note}</div>
+        <div class="solfege">${note.solfege}</div>
+      `;
+      key.addEventListener('click', () => highlightKey(note));
+      piano.appendChild(key);
+    });
+
+    // Permitir tocar con el teclado
+    document.addEventListener('keydown', (event) => {
+      const key = event.key.toUpperCase();
+      const note = notes.find(n => n.key === key);
+      if (note) highlightKey(note);
+    });
+
+    // Efecto visual (sin sonido)
+    function highlightKey(note) {
+      const selector = note.type === 'white' ? '.white-key' : '.black-key';
+      const keyEl = Array.from(document.querySelectorAll(selector)).find(k =>
+        k.querySelector('.note-name').textContent === note.note
+      );
+      if (keyEl) {
+        keyEl.style.transform = 'translateY(3px)';
+        setTimeout(() => {
+          keyEl.style.transform = 'translateY(0)';
+        }, 150);
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
