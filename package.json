@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/TortuguitaKun/Prollecto-escuela-para-j-venes-talentos-proyecto-TDA-#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "express": "^5.1.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.15.3"

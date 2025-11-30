@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Escuela para Jóvenes Talentos</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <!-- Íconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <!-- Framework Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        /* Estilo para hacer el formulario un poco más ancho para tantos campos */
+        .column.is-two-fifths {
+            max-width: 400px; 
+            min-width: 350px;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero is-fullheight is-info">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <!-- Se ajusta el ancho a is-two-fifths para acomodar más campos -->
+                    <div class="column is-two-fifths">
+                        <div class="card">
+                            <div class="card-content">
+                                <h1 class="title has-text-centered">Registro de Padres</h1>
+                                <p class="subtitle has-text-centered">Crea tu cuenta para inscribir a tu hijo/a.</p>
+                                
+                                <!-- Se añade el ID para el script JS -->
+                                <form id="form-registro">
+
+                                    <!-- Nombre del Padre (nombre_papa) -->
+                                    <div class="field">
+                                        <label class="label" for="nombre_papa">Nombre del Padre/Madre</label>
+                                        <div class="control has-icons-left">
+                                            <input class="input" type="text" id="nombre_papa" name="nombre_papa" placeholder="Tu nombre completo" required>
+                                            <span class="icon is-small is-left"><i class="fas fa-user-tie"></i></span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Nombre del Niño (nombre_niño) -->
+                                    <div class="field">
+                                        <label class="label" for="nombre_niño">Nombre del Niño/a</label>
+                                        <div class="control has-icons-left">
+                                            <input class="input" type="text" id="nombre_niño" name="nombre_niño" placeholder="Nombre del estudiante" required>
+                                            <span class="icon is-small is-left"><i class="fas fa-child"></i></span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Correo (correo_papa - Usuario de login) -->
+                                    <div class="field">
+                                        <label class="label" for="correo_papa">Correo Electrónico</label>
+                                        <div class="control has-icons-left">
+                                            <input class="input" type="email" id="correo_papa" name="correo_papa" placeholder="Correo para iniciar sesión" required>
+                                            <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Teléfono (telefono) -->
+                                    <div class="field">
+                                        <label class="label" for="telefono">Teléfono</label>
+                                        <div class="control has-icons-left">
+                                            <input class="input" type="tel" id="telefono" name="telefono" placeholder="Número de contacto" required>
+                                            <span class="icon is-small is-left"><i class="fas fa-phone"></i></span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Contraseña (password) -->
+                                    <div class="field">
+                                        <label class="label" for="password">Contraseña</label>
+                                        <div class="control has-icons-left">
+                                            <input class="input" type="password" id="password" name="password" placeholder="Crea tu contraseña" required>
+                                            <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="field mt-5">
+                                        <div class="control">
+                                            <button class="button is-info is-fullwidth" type="submit">Registrar Cuenta</button>
+                                        </div>
+                                    </div>
+                                    <div class="has-text-centered pt-3">
+                                        <p>¿Ya tienes cuenta? <a href="login.html">Iniciar Sesión</a></p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Incluir el script de registro -->
+    <script type="module" src="../Js/registro.js"></script> 
+</body>
+</html>
