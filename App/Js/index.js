@@ -2,9 +2,9 @@ import express from "express";
 
 import path from 'path';
 import { fileURLToPath } from "url";
-import { methods } from "./Controladores/Auteticacion";
+import { methods } from "../Controladores/Auteticacion.js";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-import {methods as Autenticacion} from "./Controladores/Auteticacion.js"
+import {methods as Autenticacion} from "../Controladores/Auteticacion.js"
 
 const app = express();
 app.set("port",3000);
