@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // App/Conexion.js
 
 import mysql from 'mysql2/promise';
@@ -32,5 +33,18 @@ export async function verificarConexion() {
         console.error("❌ ERROR CRÍTICO al conectar a la base de datos:", error.message);
         // Terminar el proceso si la conexión a la DB falla
         process.exit(1);
+=======
+let myslq = require("mysql2");
+const conexion = myslq.createConnection({
+    host:"localhost",datebase:"tda_actividades",user:"root",password:""
+});
+
+export {myslq};
+export async function GetCon() {
+    try {
+        return await myslq.Conexion(conexion);
+    } catch (error) {
+        console.error(error);
+>>>>>>> origin/MegaZero08/Lapislazuli
     }
 }
